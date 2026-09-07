@@ -20,11 +20,6 @@ const instrumentSerif = Instrument_Serif({
 	preload: true,
 });
 
-const departureMono = localFont({
-	src: '../../public/font/DepartureMono-Regular.woff2',
-	variable: '--font-departure',
-});
-
 export async function generateMetadata({
 	params,
 }: {
@@ -64,14 +59,8 @@ export default async function LocaleLayout({
 	const t = await getDictionary(locale as Locale);
 
 	return (
-		<html lang={locale} suppressHydrationWarning>
+		<html lang={locale}>
 			<head>
-				<script
-					// biome-ignore lint/security/noDangerouslySetInnerHtml: sets theme before paint to avoid flash
-					dangerouslySetInnerHTML={{
-						__html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})()`,
-					}}
-				/>
 				<script
 					defer
 					src="https://cloud.umami.is/script.js"
@@ -79,7 +68,7 @@ export default async function LocaleLayout({
 				></script>
 			</head>
 			<body
-				className={`${inter.className} ${instrumentSerif.variable} ${departureMono.variable} antialiased flex min-h-screen flex-col`}
+				className={`${inter.className} ${instrumentSerif.variable} antialiased flex min-h-screen flex-col`}
 			>
 				<div className="flex-1">{children}</div>
 				<Footer

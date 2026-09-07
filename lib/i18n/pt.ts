@@ -29,8 +29,6 @@ const pt = {
 	},
 	articles: {
 		heading: 'Artigos',
-		description:
-			'Pensamentos sobre SWE, product thinking, os desvios ocasionais da vida.',
 		noArticles: '[ 404 SEM ARTIGOS ]',
 		minRead: 'min de leitura',
 	},

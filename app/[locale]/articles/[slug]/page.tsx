@@ -86,7 +86,7 @@ export default async function Page({
 				<article
 					// biome-ignore lint/security/noDangerouslySetInnerHtml: This is necessary to render the HTML content of the article.
 					dangerouslySetInnerHTML={{ __html: article.content }}
-					className="prose prose-neutral dark:prose-invert"
+					className="prose prose-neutral"
 				></article>
 			</Main>
 		</>

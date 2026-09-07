@@ -29,8 +29,6 @@ const en = {
 	},
 	articles: {
 		heading: 'Articles',
-		description:
-			'Thoughts on SWE, product thinking, and the occasional life detour.',
 		noArticles: '[ 404 NO ARTICLES FOUND ]',
 		minRead: 'min read',
 	},
