@@ -34,7 +34,7 @@ export async function generateMetadata({
 	const t = await getDictionary(locale as Locale);
 
 	return {
-		title: t.metadata.siteTitle,
+		title: 'Gui Couto',
 		description: t.metadata.siteDescription,
 		alternates: {
 			types: {
@@ -64,8 +64,14 @@ export default async function LocaleLayout({
 	const t = await getDictionary(locale as Locale);
 
 	return (
-		<html lang={locale}>
+		<html lang={locale} suppressHydrationWarning>
 			<head>
+				<script
+					// biome-ignore lint/security/noDangerouslySetInnerHtml: sets theme before paint to avoid flash
+					dangerouslySetInnerHTML={{
+						__html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})()`,
+					}}
+				/>
 				<script
 					defer
 					src="https://cloud.umami.is/script.js"
@@ -73,9 +79,9 @@ export default async function LocaleLayout({
 				></script>
 			</head>
 			<body
-				className={`${inter.className} ${instrumentSerif.variable} ${departureMono.variable} antialiased`}
+				className={`${inter.className} ${instrumentSerif.variable} ${departureMono.variable} antialiased flex min-h-screen flex-col`}
 			>
-				{children}
+				<div className="flex-1">{children}</div>
 				<Footer
 					locale={locale as Locale}
 					codeLabel={t.footer.code}

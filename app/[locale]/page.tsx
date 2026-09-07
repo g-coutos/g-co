@@ -3,9 +3,7 @@ import Link from 'next/link';
 import { Header } from '@/components/header';
 import { LocaleToggle } from '@/components/locale-toggle';
 import { Main } from '@/components/main';
-import { TypographyH1 } from '@/components/typography';
 import { getDictionary, type Locale } from '@/lib/i18n';
-import logo from '../../public/logo.svg';
 
 export default async function Home({
 	params,
@@ -15,90 +13,58 @@ export default async function Home({
 	const { locale } = await params;
 	const t = await getDictionary(locale as Locale);
 
+	const yearsOfExperience = new Date().getFullYear() - 2022;
+
+	const companyUrls: Record<string, string> = {
+		TRADEX_URL: process.env.TRADEX_URL || '',
+		EC_URL: process.env.EC_URL || '',
+		ALURA_URL: process.env.ALURA_URL || '',
+	};
+
 	return (
-		<>
-			<Header isHomePage>
-				<div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-4">
-					<div className="flex items-center gap-3">
-						<Image
-							src={process.env.GITHUB_AVATAR_URL || ''}
-							alt=""
-							width={30}
-							height={30}
-							className="rounded-full"
-						/>
-						<Link href={`/${locale}`} className="text-sm text-center ">
-							stack learner{' '}
-							<span className="block text-xs text-gray-500">
-								(by Guilherme Couto)
-							</span>
+		<Main>
+			<section className="mb-8 flex flex-col">
+				<p>
+					{t.home.title}
+				</p>
+
+				<p className='text-gray-600'>SWE @ <Link href={companyUrls.TRADEX_URL} className='underline'>Tradex</Link></p>
+			</section>
+
+			<section>
+				<p>{t.home.bio.p1.replace('{years}', String(yearsOfExperience))}</p>
+				{t.home.bio.p2.map((item) => (
+					<p key={item.company.name} className='my-4'>
+						<Link href={companyUrls[item.company.envKey] || ''} target="_blank" rel="noopener noreferrer" className="underline">
+							{item.company.name}
 						</Link>
-					</div>
+						{item.text}
+					</p>
+				))}
+				<p>{t.home.bio.p3}</p>
 
-					<nav className="flex items-center gap-3 md:ml-auto text-sm text-gray-500">
-						<Link
-							href={`/${locale}/articles`}
-							className="hover:text-gray-600 transition-colors"
-						>
-							/articles
-						</Link>
-						<Link
-							href={process.env.GITHUB_URL || ''}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="hover:text-gray-600 transition-colors"
-						>
-							/github
-						</Link>
-						<Link
-							href={process.env.LINKEDIN_URL || ''}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="hover:text-gray-600 transition-colors"
-						>
-							/linkedin
-						</Link>
-					</nav>
-
-					<LocaleToggle locale={locale as Locale} />
-				</div>
-			</Header>
-
-			<Main>
-				<section className="mb-8 flex flex-col items-center">
-					<div className="mb-8 flex h-12.5 w-12.5 items-center justify-center rounded-2xl text-fluorescent-yellow shadow-lg bg-foreground">
-						<Image
-							src={logo}
-							alt="Stack Learner Logo"
-							width={40}
-							height={40}
-							draggable="false"
-						/>
-					</div>
-
-					<span className="text-sm text-center">{t.home.tagline}</span>
-					<TypographyH1 className="text-5xl md:text-6xl text-center font-bold">
-						STACK LEARNER
-					</TypographyH1>
-					<h2 className="font-mono text-sm uppercase">
-						<span className="text-amber-400">&gt;</span> building products in
-						public
-					</h2>
-				</section>
-
-				<section className="max-w-110 mx-auto text-center">
-					<p>{t.home.bio}</p>
-
+				<p className='mt-4'>
+					{t.home.bio.p4.pre}
+					<Link
+						href={process.env.X_URL || ''}
+						target="_blank"
+						rel="noopener noreferrer"
+						className="underline"
+					>
+						{t.home.bio.p4.x}
+					</Link>
+					{t.home.bio.p4.mid}
 					<Link
 						href={process.env.LINKEDIN_URL || ''}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="inline-block mt-5 px-4 py-3 border border-sky-500 rounded-md text-sm"
+						className="underline"
 					>
-						{t.home.cta}
+						{t.home.bio.p4.linkedin}
 					</Link>
-				</section>
-			</Main>
-		</>
+					{t.home.bio.p4.post}
+				</p>
+			</section>
+		</Main>
 	);
 }

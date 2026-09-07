@@ -7,7 +7,7 @@ export function TypographyH1({
 	return (
 		<h1
 			{...props}
-			className={cn('my-3 text-3xl md:text-4xl font-serif', className)}
+			className={cn('my-3 text-2xl', className)}
 		>
 			{props.children}
 		</h1>

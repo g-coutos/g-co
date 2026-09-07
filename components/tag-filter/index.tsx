@@ -25,7 +25,7 @@ export async function TagFilter({
 					'px-2 py-0.5 border rounded text-xs transition-colors duration-200',
 					!activeTag
 						? 'border-sky-500 text-foreground'
-						: 'bg-gray-100 border-gray-100 text-gray-500 hover:bg-gray-200',
+						: 'bg-gray-100 border-gray-100 text-gray-500 hover:bg-gray-200 dark:bg-slate-800 dark:border-slate-800 dark:text-gray-400 dark:hover:bg-slate-700',
 				)}
 			>
 				{allLabel}

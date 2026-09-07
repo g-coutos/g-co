@@ -12,8 +12,8 @@ export function Footer({ locale, codeLabel, rssFeedLabel }: FooterProps) {
 
 	return (
 		<footer className="max-w-2xl w-full mx-auto">
-			<div className="h-16 flex items-center justify-center md:justify-start gap-2 mx-auto p-8 border border-t-0 border-gray-200 text-xs">
-				<span>© {new Date().getFullYear()} Stack Learner</span>
+			<div className="h-16 flex items-center justify-center md:justify-start gap-2 mx-auto p-8 text-xs border-t border-gray-300">
+				<span>© {new Date().getFullYear()} g-c</span>
 				<span className="text-gray-500">|</span>
 				<Link
 					href={GITHUB_REPO_URL}
