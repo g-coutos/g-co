@@ -4,8 +4,8 @@ import type { Locale } from '@/lib/i18n';
 const SITE_URL = process.env.RSS_URL;
 
 const channelTitles: Record<string, string> = {
-	pt: 'Stack Learner Por Guilherme Couto',
-	en: 'Stack Learner By Guilherme Couto',
+	pt: 'Guilherme Couto',
+	en: 'Guilherme Couto',
 };
 
 const channelLangs: Record<string, string> = {
@@ -32,7 +32,7 @@ export async function GET(
 
 	const items = sorted
 		.map((article) => {
-			const url = `${SITE_URL}/${locale}/articles/${article.slug}`;
+			const url = `${SITE_URL}/${locale}/${article.slug}`;
 			const pubDate = new Date(article.metadata.date).toUTCString();
 			return `
     <item>

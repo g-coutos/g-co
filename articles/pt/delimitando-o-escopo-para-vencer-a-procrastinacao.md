@@ -6,7 +6,6 @@ tags: ["product engineering"]
 published: true
 ---
 
-## Procrastinação
 Desde que comecei a estudar sobre desenvolvimento de software, tive vontade de ter um blog pessoal pra poder compartilhar meus aprendizados. Depois de algum tempo atuando na área, vi que tinha o conhecimento pra criá-lo do zero e demonstrar minhas habilidades técnicas. 
 
 O início de um projeto sempre é uma alegria: escolhi a stack, modelei as tabelas do banco, decidi onde hospedar os serviços... tudo parecia perfeito. O problema é que a complexidade começou a crescer e meu tempo e vontade de continuar atuando em um *side project* que deveria ser simples e rápido logo acabaram. 

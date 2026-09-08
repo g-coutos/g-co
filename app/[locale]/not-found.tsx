@@ -1,34 +1,25 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import { Header } from '@/components/header';
+import { BackToHome } from '@/components/back-to-home';
 import { Main } from '@/components/main';
+import en from '@/lib/i18n/en';
+import pt from '@/lib/i18n/pt';
 
 const messages = {
-	pt: '[ PÁGINA NÃO ENCONTRADA ]',
-	en: '[ PAGE NOT FOUND ]',
-};
-
-const backLabels = {
-	pt: 'Voltar para home',
-	en: 'Back to home',
+	en: en.notFound.message,
+	pt: pt.notFound.message,
 };
 
 export default function NotFound() {
 	const params = useParams();
-	const locale = (params?.locale as string) || 'pt';
+	const locale = (params?.locale as string) || 'en';
 	const message = messages[locale as keyof typeof messages] ?? messages.en;
-	const backLabel =
-		backLabels[locale as keyof typeof backLabels] ?? backLabels.en;
 
 	return (
-		<>
-			<Header backToHomeLabel={backLabel} locale={locale}>
-				<h1 className="text-6xl md:text-8xl font-bold">404</h1>
-			</Header>
-			<Main>
-				<span className="w-fit text-gray-400 font-mono">{message}</span>
-			</Main>
-		</>
+		<Main className="h-lvh flex flex-col items-center justify-center gap-4">
+			<span className="w-fit text-gray-400 font-mono">[404 {message}]</span>
+			<BackToHome href={`/${locale}`} />
+		</Main>
 	);
 }

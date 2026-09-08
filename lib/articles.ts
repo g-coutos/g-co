@@ -88,13 +88,14 @@ export async function getArticleBySlug(slug: string, locale: Locale) {
 
 	const { data, content } = matter(fileContent);
 
-	const htmlContent = await markdownToHtml(content);
+	const { html, headings } = await markdownToHtml(content);
 
 	return {
 		slug,
 		metadata: data,
 		tags: data.tags || [],
-		content: htmlContent,
+		content: html,
+		headings,
 		readingTime: getReadingTime(content),
 	};
 }

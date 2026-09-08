@@ -1,9 +1,7 @@
 import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { Instrument_Serif, Inter } from 'next/font/google';
-import localFont from 'next/font/local';
 import { notFound } from 'next/navigation';
-import { Footer } from '@/components/footer';
 import { getDictionary, type Locale, locales } from '@/lib/i18n';
 import '../globals.css';
 
@@ -20,11 +18,6 @@ const instrumentSerif = Instrument_Serif({
 	preload: true,
 });
 
-const departureMono = localFont({
-	src: '../../public/font/DepartureMono-Regular.woff2',
-	variable: '--font-departure',
-});
-
 export async function generateMetadata({
 	params,
 }: {
@@ -34,7 +27,7 @@ export async function generateMetadata({
 	const t = await getDictionary(locale as Locale);
 
 	return {
-		title: t.metadata.siteTitle,
+		title: 'Gui Couto',
 		description: t.metadata.siteDescription,
 		alternates: {
 			types: {
@@ -73,14 +66,9 @@ export default async function LocaleLayout({
 				></script>
 			</head>
 			<body
-				className={`${inter.className} ${instrumentSerif.variable} ${departureMono.variable} antialiased`}
+				className={`${inter.className} ${instrumentSerif.variable} antialiased flex min-h-screen flex-col`}
 			>
-				{children}
-				<Footer
-					locale={locale as Locale}
-					codeLabel={t.footer.code}
-					rssFeedLabel={t.footer.rssFeed}
-				/>
+				<div className="flex flex-1 flex-col">{children}</div>
 				<Analytics />
 			</body>
 		</html>
