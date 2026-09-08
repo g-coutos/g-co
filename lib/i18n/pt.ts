@@ -2,19 +2,19 @@ const pt = {
 	home: {
 		title: 'Guilherme Couto',
 		bio: {
-			p1: 'SWE com {years}+ anos construindo produtos web em toda a stack.',
+			p1: 'SWE com {years}+ anos construindo produtos web.',
 			p2: [
 				{
 					company: { name: 'Tradex', envKey: 'TRADEX_URL' },
-					text: ' — atuo no backend de uma plataforma de trading marketing: pipelines de dados sobre grandes volumes de dados de campo multi-cliente, um motor de regras baseado em estratégias com lógica por cliente e isolamento total de contas, além de geração automática de relatórios e melhorias de confiabilidade em pipelines críticos.',
+					text: ' — atuo no backend de uma plataforma de trade marketing: pipelines que processam dados de campo de múltiplos clientes em larga escala, um motor de regras orientado a estratégias com lógica específica por cliente e isolamento total entre contas, além de relatórios automatizados e trabalho de confiabilidade em pipelines críticos.',
 				},
 				{
 					company: { name: 'EC', envKey: 'EC_URL' },
-					text: ' — entreguei um produto de ponta a ponta sozinho, das regras de negócio a uma UI responsiva e CI/CD.',
+					text: ' — entreguei sozinho um produto completo, das regras de negócio à UI responsiva e ao CI/CD.',
 				},
 				{
 					company: { name: 'Alura', envKey: 'ALURA_URL' },
-					text: ' — cortei peso real de performance e de bases de código: páginas 30% mais rápidas, 35K+ linhas removidas.',
+					text: ' — reduzi peso real de performance e de código: páginas 30% mais rápidas e mais de 35K+ linhas removidas.',
 				},
 			],
 			p3: 'Agora estou com foco total em Product Engineering — da necessidade do usuário até a produção.',

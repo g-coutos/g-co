@@ -6,7 +6,7 @@ const en = {
 			p2: [
 				{
 					company: { name: 'Tradex', envKey: 'TRADEX_URL' },
-					text: ' — I work on the backend for a trading marketing platform: data pipelines over large-scale multi-client field data, a strategy-based rule engine with per-client logic and full account isolation, plus automated reporting and reliability work on critical pipelines.',
+					text: ' — I work on the backend for a trade marketing platform: data pipelines over large-scale multi-client field data, a strategy-based rule engine with per-client logic and full account isolation, plus automated reporting and reliability work on critical pipelines.',
 				},
 				{
 					company: { name: 'EC', envKey: 'EC_URL' },
