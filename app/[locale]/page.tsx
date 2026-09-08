@@ -59,7 +59,8 @@ export default async function Home({
 						<Link
 							target="_blank"
 							rel="noopener noreferrer"
-							href={companyUrls.TRADEX_URL} className="underline"
+							href={companyUrls.TRADEX_URL}
+							className="underline"
 						>
 							Tradex
 						</Link>

@@ -68,14 +68,14 @@ export default async function Page({
 			</aside>
 			<Main>
 				<article>
-					<h1
-						id="title"
-						className="text-base font-semibold"
-					>
+					<h1 id="title" className="text-base font-semibold">
 						{article.metadata.title}
 					</h1>
 					<p className="mb-10 text-sm text-gray-400">
-						{formatDate(article.metadata.date)} • <i>{article.readingTime} {t.articles.minRead}</i>
+						{formatDate(article.metadata.date)} •{' '}
+						<i>
+							{article.readingTime} {t.articles.minRead}
+						</i>
 					</p>
 					<section
 						// biome-ignore lint/security/noDangerouslySetInnerHtml: This is necessary to render the HTML content of the article.
@@ -85,7 +85,5 @@ export default async function Page({
 				</article>
 			</Main>
 		</>
-
-
 	);
 }
