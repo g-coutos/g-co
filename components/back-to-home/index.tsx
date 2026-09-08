@@ -1,17 +1,17 @@
 import Link from 'next/link';
 
 interface BackToHomeProps {
-	label: string;
 	href: string;
 }
 
-export function BackToHome({ label, href }: BackToHomeProps) {
+export function BackToHome({ href }: BackToHomeProps) {
 	return (
 		<Link
 			href={href}
-			className="flex items-center gap-2 mb-8 text-xs text-gray-500 hover:text-gray-700 transition-[300ms]"
+			className="flex items-center gap-2 mb-4 text-xs uppercase text-gray-500 hover:text-gray-700 transition-[300ms]"
+			style={{ fontFamily: 'monospace' }}
 		>
-			<span style={{ fontFamily: 'monospace' }}>←</span> {label}
+			<span className="block text-2xl">←</span> Back
 		</Link>
 	);
 }

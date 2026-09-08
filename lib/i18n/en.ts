@@ -6,7 +6,7 @@ const en = {
 			p2: [
 				{
 					company: { name: 'Tradex', envKey: 'TRADEX_URL' },
-					text: ' — I lead backend for a retail-execution intelligence platform: data pipelines over large-scale multi-client field data, a strategy-based rule engine with per-client logic and full account isolation, plus automated reporting and reliability work on critical pipelines.',
+					text: ' — I work on the backend for a trading marketing platform: data pipelines over large-scale multi-client field data, a strategy-based rule engine with per-client logic and full account isolation, plus automated reporting and reliability work on critical pipelines.',
 				},
 				{
 					company: { name: 'EC', envKey: 'EC_URL' },
@@ -17,7 +17,7 @@ const en = {
 					text: ' — cut real weight from performance and codebases: 30% faster pages, 35K+ lines removed.',
 				},
 			],
-			p3: "Now I'm going all in on product engineering — owning the problem from user need to production.",
+			p3: "Now I'm going all in on Product Engineering — owning the problem from user need to production.",
 			p4: {
 				pre: 'You can contact me on ',
 				x: 'X',
@@ -31,13 +31,14 @@ const en = {
 		heading: 'Articles',
 		noArticles: '[ 404 NO ARTICLES FOUND ]',
 		minRead: 'min read',
+		tableOfContents: 'On this page',
 	},
 	footer: {
 		code: 'Code',
 		rssFeed: 'RSS Feed',
 	},
 	nav: {
-		backToHome: 'Back to home',
+		backToHome: 'Home',
 		all: 'All',
 	},
 	metadata: {
@@ -46,7 +47,7 @@ const en = {
 			'Stack Learner is the personal blog/portfolio of Guilherme Couto, where he explores and shares insights about the world of Software/Product Engineering.',
 	},
 	notFound: {
-		message: '[ PAGE NOT FOUND ]',
+		message: 'PAGE NOT FOUND',
 	},
 };
 
