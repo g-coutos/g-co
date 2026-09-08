@@ -56,7 +56,11 @@ export default async function Home({
 
 					<p className="text-gray-600">
 						SWE @{' '}
-						<Link href={companyUrls.TRADEX_URL} className="underline">
+						<Link
+							target="_blank"
+							rel="noopener noreferrer"
+							href={companyUrls.TRADEX_URL} className="underline"
+						>
 							Tradex
 						</Link>
 					</p>
