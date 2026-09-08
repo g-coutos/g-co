@@ -54,8 +54,6 @@ export default async function LocaleLayout({
 		notFound();
 	}
 
-	const t = await getDictionary(locale as Locale);
-
 	return (
 		<html lang={locale}>
 			<head>

@@ -43,7 +43,9 @@ export function TableOfContents({
 						href="#"
 						className={cn(
 							'block -ml-px py-1 mb-2 font-medium transition-colors',
-							titleHidden ? 'text-transparent' : 'text-gray-400 hover:text-gray-700',
+							titleHidden
+								? 'text-transparent'
+								: 'text-gray-400 hover:text-gray-700',
 						)}
 					>
 						{title}

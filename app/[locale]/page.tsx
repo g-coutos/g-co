@@ -56,7 +56,12 @@ export default async function Home({
 
 					<p className="text-gray-600">
 						SWE @{' '}
-						<Link href={companyUrls.TRADEX_URL} className="underline">
+						<Link
+							target="_blank"
+							rel="noopener noreferrer"
+							href={companyUrls.TRADEX_URL}
+							className="underline"
+						>
 							Tradex
 						</Link>
 					</p>
@@ -67,9 +72,9 @@ export default async function Home({
 					{t.home.bio.p2.map((item) => (
 						<p key={item.company.name} className="my-4">
 							<Link
-								href={companyUrls[item.company.envKey] || ''}
 								target="_blank"
 								rel="noopener noreferrer"
+								href={companyUrls[item.company.envKey] || ''}
 								className="underline"
 							>
 								{item.company.name}
@@ -117,8 +122,6 @@ export default async function Home({
 												{formatDate(article.metadata.date)}
 											</span>
 											<Link
-												target="_blank"
-												rel="noopener noreferrer"
 												href={`/${locale}/${article.slug}`}
 												className="underline"
 											>
