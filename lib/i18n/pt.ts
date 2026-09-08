@@ -44,7 +44,7 @@ const pt = {
 	metadata: {
 		siteTitle: 'Stack Learner by Guilherme Couto',
 		siteDescription:
-			'Stack Learner é o blog pessoal/portfólio de Guilherme Couto, onde ele explora e compartilha insights sobre o mundo da Engenharia de Software/Produto.',
+			'Site pessoal do Guilherme Couto, SW/Product Engineer que constrói produtos web de ponta a ponta. Notas e artigos sobre engenharia, produto e entrega.',
 	},
 	notFound: {
 		message: 'PÁGINA NÃO ENCONTRADA',
