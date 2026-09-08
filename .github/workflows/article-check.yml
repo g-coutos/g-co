@@ -9,9 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Check Frontmatter
         run: |
-          for file in $(git diff --name-only origin/main HEAD -- 'articles/*.md'); do
+          for file in $(git diff --name-only origin/${{ github.base_ref }} HEAD -- 'articles/*.md'); do
             echo "Validating: $file"
             # Checks if published, title and date exists
             grep -q "^published:" $file || (echo "❌ 'published' is missing!" && exit 1)
