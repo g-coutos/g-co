@@ -71,9 +71,9 @@ export default async function Home({
 					{t.home.bio.p2.map((item) => (
 						<p key={item.company.name} className="my-4">
 							<Link
-								href={companyUrls[item.company.envKey] || ''}
 								target="_blank"
 								rel="noopener noreferrer"
+								href={companyUrls[item.company.envKey] || ''}
 								className="underline"
 							>
 								{item.company.name}
@@ -121,8 +121,6 @@ export default async function Home({
 												{formatDate(article.metadata.date)}
 											</span>
 											<Link
-												target="_blank"
-												rel="noopener noreferrer"
 												href={`/${locale}/${article.slug}`}
 												className="underline"
 											>
