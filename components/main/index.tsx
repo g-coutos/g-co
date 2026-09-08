@@ -10,7 +10,7 @@ export function Main({
 	return (
 		<main
 			className={cn(
-				'w-full max-w-xl mx-auto p-8 text-sm',
+				'w-full max-w-xl mx-auto p-8 pt-20 text-sm',
 				className,
 			)}
 		>

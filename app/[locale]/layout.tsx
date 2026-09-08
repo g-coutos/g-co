@@ -1,9 +1,7 @@
 import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { Instrument_Serif, Inter } from 'next/font/google';
-import localFont from 'next/font/local';
 import { notFound } from 'next/navigation';
-import { Footer } from '@/components/footer';
 import { getDictionary, type Locale, locales } from '@/lib/i18n';
 import '../globals.css';
 
@@ -70,12 +68,7 @@ export default async function LocaleLayout({
 			<body
 				className={`${inter.className} ${instrumentSerif.variable} antialiased flex min-h-screen flex-col`}
 			>
-				<div className="flex-1">{children}</div>
-				<Footer
-					locale={locale as Locale}
-					codeLabel={t.footer.code}
-					rssFeedLabel={t.footer.rssFeed}
-				/>
+				<div className="flex flex-1 flex-col">{children}</div>
 				<Analytics />
 			</body>
 		</html>
