@@ -19,7 +19,7 @@ export default function NotFound() {
 	return (
 		<Main className="h-lvh flex flex-col items-center justify-center gap-4">
 			<span className="w-fit text-gray-400 font-mono">[404 {message}]</span>
-			<BackToHome href={`/${locale}`} />
+			<BackToHome />
 		</Main>
 	);
 }

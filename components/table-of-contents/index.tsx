@@ -35,7 +35,7 @@ export function TableOfContents({
 
 	return (
 		<nav aria-label={label} className="max-w-50 fixed top-21 left-12 text-sm">
-			<BackToHome href="/" />
+			<BackToHome />
 			<ul className="">
 				<li>
 					<a
