@@ -1,4 +1,5 @@
 ---
+id: 6b3d8753-ae3e-4a9d-8bc8-2f5cd3e301b1
 title: "Delimitando o Escopo pra Vencer a Procrastinação"
 description: "Como eu delimitei o escopo do meu projeto pessoal pra superar a procrastinação e entregar um produto de valor."
 date: "2026-05-26"

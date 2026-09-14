@@ -13,7 +13,7 @@ function getLocaleFromHeader(request: NextRequest): Locale {
 		: defaultLocale;
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
 	const { pathname } = request.nextUrl;
 
 	const hasLocale = locales.some(
@@ -28,6 +28,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
 	matcher: [
-		'/((?!_next/static|_next/image|favicon\\.ico|robots\\.txt|sitemap\\.xml|rss\\.xml).*)',
+		'/((?!_next/static|_next/image|.*\\..*).*)',
 	],
 };

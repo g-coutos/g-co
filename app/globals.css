@@ -148,3 +148,7 @@ ol {
 	font-family: monospace;
 	font-size: 0.875rem;
 }
+
+.prose img {
+	border-radius: 0.5rem;
+}

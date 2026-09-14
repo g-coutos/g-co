@@ -19,6 +19,34 @@ function nodeText(node: any): string {
 	return '';
 }
 
+// A line that's just an image still parses as a paragraph, so remark-rehype
+// wraps it as <p><img></p>. Unwrap it so <img> renders at the top level.
+function unwrapImageParagraphs() {
+	// biome-ignore lint/suspicious/noExplicitAny: hast tree.
+	return (tree: any) => {
+		// biome-ignore lint/suspicious/noExplicitAny: hast node.
+		const walk = (node: any) => {
+			if (!Array.isArray(node.children)) return;
+
+			node.children = node.children.flatMap((child: any) => {
+				const onlyChild =
+					child.type === 'element' &&
+					child.tagName === 'p' &&
+					child.children?.length === 1 &&
+					child.children[0].tagName === 'img'
+						? child.children[0]
+						: null;
+
+				return onlyChild ? [onlyChild] : [child];
+			});
+
+			for (const child of node.children) walk(child);
+		};
+
+		walk(tree);
+	};
+}
+
 function collectHeadings() {
 	// biome-ignore lint/suspicious/noExplicitAny: hast tree and vfile.
 	return (tree: any, file: any) => {
@@ -53,6 +81,7 @@ export async function markdownToHtml(
 	const result = await remark()
 		.use(remarkParse)
 		.use(remarkRehype)
+		.use(unwrapImageParagraphs)
 		.use(rehypeSlug)
 		.use(collectHeadings)
 		.use(rehypePrism)
