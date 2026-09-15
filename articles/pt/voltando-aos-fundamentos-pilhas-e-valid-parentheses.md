@@ -13,7 +13,7 @@ Quero fechar os gaps que ainda tenho e nada melhor do que começar aprendendo al
 Para a surpresa dos tokenmaxxers, estou usando um livro físico pra isso, caso te interesse, é esse:
 
 ![Estrutura de Dados e Algoritmos com JavaScript, de Loiane Groner](/articles/images/43f17ba9-324b-427e-a64b-821ecd5fb9ad/IMG_0757.webp)
-> *Estrutura de dados e algoritmos com JavaScript – Loiane Groner:*
+> *Estrutura de dados e algoritmos com JavaScript – Loiane Groner*
 
 ---
 

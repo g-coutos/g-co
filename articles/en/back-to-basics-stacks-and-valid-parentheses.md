@@ -14,7 +14,7 @@ I want to close the gaps I still have, and there's no better way to start than b
 To the surprise of the tokenmaxxers, I'm using a physical book for this. In case you're interested, here it is:
 
 ![Data Structures and Algorithms with JavaScript, by Loiane Groner](/articles/images/43f17ba9-324b-427e-a64b-821ecd5fb9ad/IMG_0757.webp)
-> *"Data Structures and Algorithms with JavaScript" – Loiane Groner*
+> *Data Structures and Algorithms with JavaScript – Loiane Groner*
 
 ---
 
@@ -134,7 +134,7 @@ var isValid = function(s) {
 
 ## Conclusion
 
-Reading a physical book about algorithms and coding without AI feels really good. Using coding agents on a daily basis had given me this weird sense that I wasn't exercising my brain anymore.
+Reading a physical book about algorithms and coding without AI feels really good. Using coding agents on a daily basis had given me AI brain fry (yes, they came up with a term for this).
 
 I intend to keep studying, strengthening my foundational knowledge. I consider these subjects important. We still need ownership over our code and our decisions. Outsourcing that to AI can carry a high cost down the road.
 
