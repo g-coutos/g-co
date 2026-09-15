@@ -2,6 +2,7 @@ import rehypePrism from 'rehype-prism-plus';
 import rehypeSlug from 'rehype-slug';
 import rehypeStringify from 'rehype-stringify';
 import { remark } from 'remark';
+import remarkGfm from 'remark-gfm';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import 'prismjs/themes/prism.css';
@@ -80,6 +81,7 @@ export async function markdownToHtml(
 ): Promise<{ html: string; headings: Heading[] }> {
 	const result = await remark()
 		.use(remarkParse)
+		.use(remarkGfm)
 		.use(remarkRehype)
 		.use(unwrapImageParagraphs)
 		.use(rehypeSlug)
