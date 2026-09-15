@@ -149,6 +149,20 @@ ol {
 	font-size: 0.875rem;
 }
 
+.prose :where(code):not(:where(pre code)) {
+	font-family: monospace;
+	font-weight: 400;
+	background: #efefef;
+	color: tomato;
+	border-radius: 0.25rem;
+	padding: 0.1em 0.2em;
+}
+
+.prose :where(code):not(:where(pre code))::before,
+.prose :where(code):not(:where(pre code))::after {
+	content: none;
+}
+
 .prose img {
 	border-radius: 0.5rem;
 }
