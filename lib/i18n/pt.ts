@@ -6,18 +6,14 @@ const pt = {
 			p2: [
 				{
 					company: { name: 'Tradex', envKey: 'TRADEX_URL' },
-					text: ' — atuo no backend de uma plataforma de trade marketing: pipelines que processam dados de campo de múltiplos clientes em larga escala, um motor de regras orientado a estratégias com lógica específica por cliente e isolamento total entre contas, além de relatórios automatizados e trabalho de confiabilidade em pipelines críticos.',
-				},
-				{
-					company: { name: 'EC', envKey: 'EC_URL' },
-					text: ' — entreguei sozinho um produto completo, das regras de negócio à UI responsiva e ao CI/CD.',
+					text: ' — sou responsável de ponta a ponta por um ETL de scoring em uma plataforma de trade marketing: a API que dispara e acompanha o job no AWS Batch, e o pipeline em Python/SQLAlchemy que faz o trabalho pesado; reduzi o pico de memória em até 43%, resolvi uma race condition em produção com upserts idempotentes, e redesenhei um motor de regras multi-indústria hardcoded para um schema de banco de dados configurável.',
 				},
 				{
 					company: { name: 'Alura', envKey: 'ALURA_URL' },
 					text: ' — reduzi peso real de performance e de código: páginas 30% mais rápidas e mais de 35K+ linhas removidas.',
 				},
 			],
-			p3: 'Agora estou com foco total em Product Engineering — da necessidade do usuário até a produção.',
+			p3: 'Agora estou com foco total em Data Engineering — construindo pipelines e sistemas de dados confiáveis em larga escala.',
 			p4: {
 				pre: 'Você pode me encontrar no ',
 				x: 'X',

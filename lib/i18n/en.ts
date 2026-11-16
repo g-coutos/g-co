@@ -6,18 +6,14 @@ const en = {
 			p2: [
 				{
 					company: { name: 'Tradex', envKey: 'TRADEX_URL' },
-					text: ' — I work on the backend for a trade marketing platform: data pipelines over large-scale multi-client field data, a strategy-based rule engine with per-client logic and full account isolation, plus automated reporting and reliability work on critical pipelines.',
-				},
-				{
-					company: { name: 'EC', envKey: 'EC_URL' },
-					text: ' — shipped an end-to-end product on my own, from business rules to a responsive UI and CI/CD.',
+					text: ' — I own a scoring ETL end-to-end on a trade marketing platform: the API that triggers and tracks the job on AWS Batch, and the Python/SQLAlchemy pipeline doing the heavy lifting; cut peak memory by up to 43%, closed a production race condition with idempotent upserts, and redesigned a hardcoded multi-industry rules engine into a configurable database schema.',
 				},
 				{
 					company: { name: 'Alura', envKey: 'ALURA_URL' },
 					text: ' — cut real weight from performance and codebases: 30% faster pages, 35K+ lines removed.',
 				},
 			],
-			p3: "Now I'm going all in on Product Engineering — owning the problem from user need to production.",
+			p3: "Now I'm going all in on Data Engineering — building reliable, large-scale data pipelines and systems.",
 			p4: {
 				pre: 'You can contact me on ',
 				x: 'X',
