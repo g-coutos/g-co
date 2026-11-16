@@ -21,7 +21,7 @@ export function Footer({ locale, codeLabel, rssFeedLabel }: FooterProps) {
 				<span className="text-gray-500">|</span>
 				<FooterLink href={`/${locale}/rss.xml`}>{rssFeedLabel}</FooterLink>
 				<span className="text-gray-500">|</span>
-				<FooterLink href={X_URL}>X</FooterLink>
+				{/* <FooterLink href={X_URL}>X</FooterLink> */}
 				<span className="text-gray-500">|</span>
 				<FooterLink href={LINKEDIN_URL}>LinkedIn</FooterLink>
 			</div>
