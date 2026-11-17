@@ -16,14 +16,14 @@ export function TableOfContents({
 	title: string;
 	label: string;
 }) {
-	const [titleHidden, setTitleHidden] = useState(false);
+	const [titleVisible, setTitleVisible] = useState(true);
 
 	useEffect(() => {
 		const el = document.getElementById(TITLE_ID);
 		if (!el) return;
 
 		const observer = new IntersectionObserver(
-			([entry]) => setTitleHidden(entry.isIntersecting),
+			([entry]) => setTitleVisible(entry.isIntersecting),
 			{ threshold: 0 },
 		);
 		observer.observe(el);
@@ -43,8 +43,8 @@ export function TableOfContents({
 						href="#"
 						className={cn(
 							'block -ml-px py-1 mb-2 font-medium transition-colors',
-							titleHidden
-								? 'text-transparent'
+							titleVisible
+								? 'text-transparent cursor-default'
 								: 'text-gray-400 hover:text-gray-700',
 						)}
 					>

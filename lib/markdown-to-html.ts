@@ -2,6 +2,7 @@ import rehypePrism from 'rehype-prism-plus';
 import rehypeSlug from 'rehype-slug';
 import rehypeStringify from 'rehype-stringify';
 import { remark } from 'remark';
+import remarkGfm from 'remark-gfm';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import 'prismjs/themes/prism.css';
@@ -17,6 +18,34 @@ function nodeText(node: any): string {
 	if (node.type === 'text') return node.value;
 	if (Array.isArray(node.children)) return node.children.map(nodeText).join('');
 	return '';
+}
+
+// A line that's just an image still parses as a paragraph, so remark-rehype
+// wraps it as <p><img></p>. Unwrap it so <img> renders at the top level.
+function unwrapImageParagraphs() {
+	// biome-ignore lint/suspicious/noExplicitAny: hast tree.
+	return (tree: any) => {
+		// biome-ignore lint/suspicious/noExplicitAny: hast node.
+		const walk = (node: any) => {
+			if (!Array.isArray(node.children)) return;
+
+			node.children = node.children.flatMap((child: any) => {
+				const onlyChild =
+					child.type === 'element' &&
+					child.tagName === 'p' &&
+					child.children?.length === 1 &&
+					child.children[0].tagName === 'img'
+						? child.children[0]
+						: null;
+
+				return onlyChild ? [onlyChild] : [child];
+			});
+
+			for (const child of node.children) walk(child);
+		};
+
+		walk(tree);
+	};
 }
 
 function collectHeadings() {
@@ -52,7 +81,9 @@ export async function markdownToHtml(
 ): Promise<{ html: string; headings: Heading[] }> {
 	const result = await remark()
 		.use(remarkParse)
+		.use(remarkGfm)
 		.use(remarkRehype)
+		.use(unwrapImageParagraphs)
 		.use(rehypeSlug)
 		.use(collectHeadings)
 		.use(rehypePrism)

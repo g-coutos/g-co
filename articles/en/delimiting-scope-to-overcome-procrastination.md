@@ -1,4 +1,5 @@
 ---
+id: 6b3d8753-ae3e-4a9d-8bc8-2f5cd3e301b1
 title: "Delimiting Scope to Overcome Procrastination"
 description: "How I scoped down my personal project to overcome procrastination and ship something valuable."
 date: "2026-05-26"

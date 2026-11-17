@@ -14,15 +14,15 @@ export function Footer({ locale, codeLabel, rssFeedLabel }: FooterProps) {
 
 	return (
 		<footer className="mt-auto w-full max-w-xl mx-auto px-8">
-			<div className="h-16 flex items-center justify-center md:justify-start gap-2 py-8 text-xs border-t border-gray-300">
+			<div className="h-16 flex items-center justify-center gap-2 py-8 text-xs border-t border-gray-300">
 				<span>© {new Date().getFullYear()} g-co</span>
 				<span className="text-gray-500">|</span>
 				<FooterLink href={GITHUB_REPO_URL}>{codeLabel}</FooterLink>
 				<span className="text-gray-500">|</span>
 				<FooterLink href={`/${locale}/rss.xml`}>{rssFeedLabel}</FooterLink>
 				<span className="text-gray-500">|</span>
-				<FooterLink href={X_URL}>X</FooterLink>
-				<span className="text-gray-500">|</span>
+				{/* <FooterLink href={X_URL}>X</FooterLink> */}
+				{/* <span className="text-gray-500">|</span> */}
 				<FooterLink href={LINKEDIN_URL}>LinkedIn</FooterLink>
 			</div>
 		</footer>

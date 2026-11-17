@@ -17,6 +17,10 @@ function getReadingTime(content: string): number {
 	return Math.ceil(words / 200);
 }
 
+export function getArticleImagePath(id: string, fileName: string): string {
+	return `/articles/images/${id}/${fileName}`;
+}
+
 function toSlug(tag: string): string {
 	return tag
 		.toLowerCase()
