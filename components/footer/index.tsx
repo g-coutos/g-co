@@ -10,7 +10,7 @@ interface FooterProps {
 export function Footer({ locale, codeLabel, rssFeedLabel }: FooterProps) {
 	const GITHUB_REPO_URL = process.env.GITHUB_REPO_URL || '';
 	const LINKEDIN_URL = process.env.LINKEDIN_URL || '';
-	const X_URL = process.env.X_URL || '';
+	// const X_URL = process.env.X_URL || '';
 
 	return (
 		<footer className="mt-auto w-full max-w-xl mx-auto px-8">
