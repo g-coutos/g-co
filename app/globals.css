@@ -141,12 +141,19 @@ body {
 }
 
 .prose p {
+	margin-bottom: 0.625rem;
 	font-size: 0.875rem;
 }
 
-.prose ul,
-ol {
+.prose ul {
+	margin-top: 0.625rem;
+	margin-bottom: 0.625rem;
 	font-size: 0.875rem;
+}
+
+.prose pre[class*="language-"] {
+	margin-top: 0.875em;
+	margin-bottom: 0.875em;
 }
 
 .prose pre code {
