@@ -1,9 +1,9 @@
 ---
-id: "0bfa532a-e9be-4af0-b20b-2af2a2105b8c"
+id: "42decda1-6780-4d9e-916e-53decc1f0814"
 title: "TIL – Subqueries"
-description: "What subqueries are, the existing types (scalar, row, table, correlated) and when to use each one."
+description: "Using subqueries in SQL's SELECT, FROM, and WHERE clauses to compare, reshape, and aggregate data."
 date: "2026-11-18"
-tags: ["til", "sql"]
+tags: [til, sql, subqueries]
 published: true
 ---
 
