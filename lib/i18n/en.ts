@@ -2,7 +2,7 @@ const en = {
 	home: {
 		title: 'Guilherme Couto',
 		bio: {
-			p1: 'SWE with {years}+ years building web products across the stack.',
+			p1: 'Software Engineer with {years}+ years of experience.',
 			p2: [
 				{
 					company: { name: 'Tradex', envKey: 'TRADEX_URL' },

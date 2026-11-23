@@ -2,7 +2,7 @@ const pt = {
 	home: {
 		title: 'Guilherme Couto',
 		bio: {
-			p1: 'SWE com {years}+ anos construindo produtos web.',
+			p1: 'Software Engineer com {years}+ anos de experiência.',
 			p2: [
 				{
 					company: { name: 'Tradex', envKey: 'TRADEX_URL' },
