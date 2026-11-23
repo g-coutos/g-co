@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { Instrument_Serif, Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
+import Script from 'next/script';
 import { getDictionary, type Locale, locales } from '@/lib/i18n';
 import '../globals.css';
 
@@ -56,18 +57,16 @@ export default async function LocaleLayout({
 
 	return (
 		<html lang={locale} data-scroll-behavior="smooth">
-			<head>
-				<script
-					defer
-					src="https://cloud.umami.is/script.js"
-					data-website-id="5f2c1d66-3464-4653-8413-324cc1d061eb"
-				></script>
-			</head>
 			<body
 				className={`${inter.className} ${instrumentSerif.variable} antialiased flex min-h-screen flex-col`}
 			>
 				<div className="flex flex-1 flex-col">{children}</div>
 				<Analytics />
+				<Script
+					strategy="afterInteractive"
+					src="https://cloud.umami.is/script.js"
+					data-website-id="5f2c1d66-3464-4653-8413-324cc1d061eb"
+				/>
 			</body>
 		</html>
 	);
